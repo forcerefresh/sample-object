@@ -1,0 +1,32 @@
+{
+  "componentType": "object",
+  "type": "sample-object",
+  "name": "Sample object",
+  "version": "1.0.0",
+  "description": "Boilerplate for creating Object for Web Slider",
+  "tags": [],
+  "categories": [],
+  "author": "Force Refresh doo",
+  "license": "",
+  "homepage": {
+    "title": "",
+    "url": ""
+  },
+  "doc": {
+    "title": "",
+    "url": ""
+  },
+  "support": {
+    "title": "",
+    "url": ""
+  },
+  "packageFiles": {
+    "appObjectFilename": "sample-object-app.js",
+    "playerObjectFilename": "sample-object-player.js",
+    "icon": "sample-object-icon.svg"
+  },
+  "packageUrl": "",
+  "logoUrl": "",
+  "created": "2022-07-07",
+  "modified": "2022-07-07"
+}
