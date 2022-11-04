@@ -15,6 +15,8 @@ Install following tools:
 
 Clone repo and install dependencies:
 
+`git clone git@github.com:forcerefresh/sample-object.git` 
+
 `yarn`
 
 ## Run
