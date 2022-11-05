@@ -64,6 +64,6 @@ To optimize or check what is inside animation bundle use analyze commands.
 
 This repo is licensed under **EULA for Web Slider Extensions** license
 
-In short, it's allowed to clone/fork, to edit/modify, create new Animation and use in Web Slider app.
+In short, it's allowed to clone/fork, to edit/modify, create new Animation and use it Web Slider app.
 
 Read LICENSE.txt file for more details.
