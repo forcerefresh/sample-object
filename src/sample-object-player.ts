@@ -8,10 +8,10 @@ import {
   PreloadFuncPropsType,
   PreloadOrder,
   UpdateObjectSizeFuncPropsType,
-} from "webslider-sdk2/lib/objects/objects-register";
-import { logger } from "webslider-sdk2/lib/utils/logger/logger";
-import { rgbColor2cssRgba } from "webslider-sdk2/lib/objects/common-properties";
-import { IInputMetadataValues } from "webslider-sdk2/lib/inputs/i-inputs";
+} from "webslider-sdk/lib/objects/objects-register";
+import { logger } from "webslider-sdk/lib/utils/logger/logger";
+import { rgbColor2cssRgba } from "webslider-sdk/lib/objects/common-properties";
+import { IInputMetadataValues } from "webslider-sdk/lib/inputs/i-inputs";
 
 import { SampleObjectValues } from "./sample-object-types";
 

@@ -2,8 +2,8 @@
  * This is a entry point for Object used in Web Slider Player.
  */
 
-import { addPlayerObjectToGlobalScope } from "webslider-sdk2/lib/objects/object-utils";
-import { IObjectDefinition } from "webslider-sdk2/lib/objects/objects-register";
+import { addPlayerObjectToGlobalScope } from "webslider-sdk/lib/objects/object-utils";
+import { IObjectDefinition } from "webslider-sdk/lib/objects/objects-register";
 import { SAMPLE_OBJECT } from "./src/sample-object-types";
 import {
   objectStart,

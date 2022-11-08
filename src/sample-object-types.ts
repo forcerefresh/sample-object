@@ -1,4 +1,4 @@
-import { RGBColor } from "webslider-sdk2/lib/utils/i-rgb-color";
+import { RGBColor } from "webslider-sdk/lib/utils/i-rgb-color";
 
 /**
  * This is object unique id. This have to be unique string.

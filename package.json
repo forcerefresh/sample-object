@@ -9,7 +9,7 @@
     "analyze-app": "source-map-explorer 'dist/sample-object-app.js'"
   },
   "dependencies": {
-    "webslider-sdk2": "^1.0.2"
+    "webslider-sdk": "^1.1.0"
   },
   "devDependencies": {
     "create-hash-file-webpack": "^1.0.4",

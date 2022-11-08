@@ -4,10 +4,10 @@ import {
   InputType,
   ISliderInput,
   ITextInput,
-} from "webslider-sdk2/lib/inputs/i-inputs";
-import { createCommonObject } from "webslider-sdk2/lib/objects/create-common-object";
-import { getObjectPlaceholder } from "webslider-sdk2/lib/objects/object-helpers";
-import { guid } from "webslider-sdk2/lib/utils/guid";
+} from "webslider-sdk/lib/inputs/i-inputs";
+import { createCommonObject } from "webslider-sdk/lib/objects/create-common-object";
+import { getObjectPlaceholder } from "webslider-sdk/lib/objects/object-helpers";
+import { guid } from "webslider-sdk/lib/utils/guid";
 import {
   CreateObjectFuncPropsType,
   CreateObjectFuncReturnType,
@@ -16,8 +16,8 @@ import {
   GetHtmlFuncPropsType,
   GetHtmlFuncReturnType,
   ObjectMetaType,
-} from "webslider-sdk2/lib/objects/objects-register";
-import { logger } from "webslider-sdk2/lib/utils/logger/logger";
+} from "webslider-sdk/lib/objects/objects-register";
+import { logger } from "webslider-sdk/lib/utils/logger/logger";
 import { SampleObjectValues, SAMPLE_OBJECT } from "./sample-object-types";
 import svgIcon from "../static/sample-object-icon.svg";
 
