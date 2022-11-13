@@ -10,16 +10,15 @@ import {
   UpdateObjectSizeFuncPropsType,
 } from "webslider-sdk/lib/objects/objects-register";
 import { logger } from "webslider-sdk/lib/utils/logger/logger";
-import { rgbColor2cssRgba } from "webslider-sdk/lib/objects/common-properties";
+import { convertRGBColor2RGBAString } from "webslider-sdk/lib/utils/utils";
 import { IInputMetadataValues } from "webslider-sdk/lib/inputs/i-inputs";
-
-import { SampleObjectValues } from "./sample-object-types";
+import { SampleObjectValues, SAMPLE_OBJECT } from "./sample-object-types";
 
 /**
  * This function return html used in Web Slider Player
  */
 export function getHtml(props: GetHtmlFuncPropsType): GetHtmlFuncReturnType {
-  logger.debug(`Sample object: getHtml()`);
+  logger.object.debug(`${SAMPLE_OBJECT}:getHtml()`);
 
   const { object, calculatedObjectSize } = props;
 
@@ -31,7 +30,9 @@ export function getHtml(props: GetHtmlFuncPropsType): GetHtmlFuncReturnType {
 
   let style = "";
   if (!metaValues.sampleColor.disabled) {
-    style = `background-color: ${rgbColor2cssRgba(values.sampleColor)} ;`;
+    style = `background-color: ${convertRGBColor2RGBAString(
+      values.sampleColor
+    )} ;`;
   }
 
   return `<div class="object-content" style="${style}">
@@ -63,7 +64,7 @@ export function getHtml(props: GetHtmlFuncPropsType): GetHtmlFuncReturnType {
 export async function sizeUpdate(
   props: UpdateObjectSizeFuncPropsType
 ): Promise<void> /*UpdateObjectSizeFuncReturnType*/ {
-  logger.debug(`Sample object: sizeUpdate()`);
+  logger.object.debug(`${SAMPLE_OBJECT}:sizeUpdate()`);
 
   const { id, calculatedObjectSize, className, values } = props;
 
@@ -96,7 +97,7 @@ export async function sizeUpdate(
 export async function preload(
   props: PreloadFuncPropsType
 ): Promise<string> /*PreloadFuncReturnType*/ {
-  logger.debug(`Sample object: preload()`);
+  logger.object.debug(`${SAMPLE_OBJECT}:preload()`);
 
   const { id } = props;
 
@@ -109,7 +110,7 @@ export async function preload(
 export function objectStart(
   props: ExecutionCodeFuncPropsType
 ): ExecutionCodeFuncReturnType {
-  logger.debug(`Sample object: objectStart()`);
+  logger.object.debug(`${SAMPLE_OBJECT}:objectStart()`);
 }
 
 /**
@@ -118,7 +119,7 @@ export function objectStart(
 export function objectStop(
   props: ExecutionCodeFuncPropsType
 ): ExecutionCodeFuncReturnType {
-  logger.debug(`Sample object: objectStop()`);
+  logger.object.debug(`${SAMPLE_OBJECT}:objectStop()`);
 }
 
 /**
@@ -128,7 +129,7 @@ export function objectStop(
 export function postProcess(
   props: PostProcessFuncPropsType
 ): PostProcessFuncReturnType {
-  logger.debug(`Sample object: postProcess()`);
+  logger.object.debug(`${SAMPLE_OBJECT}:postProcess()`);
 
   const { object } = props;
   return props.object;

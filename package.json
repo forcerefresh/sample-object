@@ -1,6 +1,6 @@
 {
   "name": "sample-object",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "EULA",
   "scripts": {
     "start": "webpack serve --open",
@@ -9,7 +9,7 @@
     "analyze-app": "source-map-explorer 'dist/sample-object-app.js'"
   },
   "dependencies": {
-    "webslider-sdk": "^1.1.0"
+    "webslider-sdk": "^1.1.11"
   },
   "devDependencies": {
     "create-hash-file-webpack": "^1.0.4",

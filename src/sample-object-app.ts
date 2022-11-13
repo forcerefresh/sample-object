@@ -39,7 +39,7 @@ export type SampleObjectTuple = [
 export function createObject(
   props: CreateObjectFuncPropsType
 ): CreateObjectFuncReturnType<SampleObjectTuple> {
-  logger.debug(`sample-object::createObject()`);
+  logger.object.debug(`${SAMPLE_OBJECT}::createObject()`);
 
   const object = createCommonObject(SAMPLE_OBJECT);
 
@@ -108,7 +108,7 @@ export function createObject(
 export function getHtmlForApp(
   props: GetHtmlFuncPropsType
 ): GetHtmlFuncReturnType {
-  logger.debug(`sample-object::getHtmlForApp()`);
+  logger.object.debug(`${SAMPLE_OBJECT}::getHtmlForApp()`);
 
   const { object, calculatedObjectSize } = props;
 
@@ -127,6 +127,8 @@ export function getHtmlForApp(
 export const getAssetsUrls = (
   props: GetAssetsUrlFuncPropsType
 ): GetAssetsUrlFuncReturnType => {
+  logger.object.debug(`${SAMPLE_OBJECT}::getAssetsUrls()`);
+
   return [];
 };
 

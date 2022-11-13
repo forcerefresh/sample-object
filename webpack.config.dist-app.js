@@ -14,15 +14,15 @@ module.exports = {
       {
         test: /\.ts?$/,
         use: WebpackStrip.loader(
-          // "logger.fatal", // this should be visible in prod
-          // "logger.error", // this should be visible in prod
-          "logger.trace",
-          "logger.debug",
-          "logger.info",
-          "logger.notice",
-          "logger.warn",
-          "logger.add",
-          "logger.flush"
+          // "logger.object.fatal", // this should be visible in prod
+          // "logger.object.error", // this should be visible in prod
+          "logger.object.trace",
+          "logger.object.debug",
+          "logger.object.info",
+          "logger.object.notice",
+          "logger.object.warn",
+          "logger.object.add",
+          "logger.object.flush"
         ),
         exclude: /node_modules/,
       },
