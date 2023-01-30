@@ -25,6 +25,13 @@ To run development server:
 
 `yarn start`
 
+## Object uid/type
+
+Before you can start using the new Object in the Web Slider, you need to change the UID of the object to the new one.
+It is recommended to use reverse DNS conventions, e.g. `io.webslider.my-awesome-animation`.
+Since the object UID is used in multiple places, an easier way is to use the IDE's search/replace function.
+Replace the `io.webslider.sample-object` string with the new object uid.
+
 ## Add object in app
 
 During development, in order to test your Object, you can add it to Web Slider app and get realtime preview.
@@ -43,15 +50,15 @@ To build Object for production:
 
 `yarn build`
 
-Bundle is located in `dist/bundle/sample-object.zip` folder.
+Bundle is located in `dist/bundle/io.webslider.sample-object.zip` folder.
 Upload bundle file in `Library > Local Extensions` and Object is ready for use in Web Slider app.
 
 It contains following files:
 
 - object-meta.json
-- sample-object-app.js
-- sample-object-player.js
-- sample-object.logo.svg
+- io.webslider.sample-object-app.js
+- io.webslider.sample-object-player.js
+- logo.svg
 
 ## Analyze
 

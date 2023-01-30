@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CreateHashFileWebpack = require("create-hash-file-webpack");
 
 const PORT = 3003;
-const MODULE_FILE_NAME_PLAYER = "sample-object-player.js";
-const MODULE_FILE_NAME_APP = "sample-object-app.js";
-const OBJECT_UID = "sample-object";
+const MODULE_FILE_NAME_PLAYER = "io.webslider.sample-object-player.js";
+const MODULE_FILE_NAME_APP = "io.webslider.sample-object-app.js";
+const OBJECT_UID = "io.webslider.sample-object";
 
 // Common configuration for Object used in Player and App
 const webpackCommon = {

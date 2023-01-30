@@ -2,14 +2,14 @@
  * This is a entry point for Object used in Web Slider App.
  */
 
-import { SAMPLE_OBJECT } from "./src/sample-object-types";
-import { postProcess } from "./src/sample-object-player";
+import { OBJECT_UID } from "./src/object-types";
+import { postProcess } from "./src/object-player";
 import {
   createObject,
   getAssetsUrls,
   getHtmlForApp,
   objectMeta,
-} from "./src/sample-object-app";
+} from "./src/object-app";
 import { IObjectAppDefinition } from "webslider-sdk/lib/objects/objects-register";
 import { addAppObjectToGlobalScope } from "webslider-sdk/lib/objects/object-utils";
 import {
@@ -23,7 +23,7 @@ import {
 showLoggerUsage(LoggerDomain.Object);
 
 export const ObjectDefinition: IObjectAppDefinition = {
-  type: SAMPLE_OBJECT,
+  type: OBJECT_UID,
   group: "media",
   meta: objectMeta,
   createObject,
@@ -33,4 +33,4 @@ export const ObjectDefinition: IObjectAppDefinition = {
 };
 
 // Object adds itself to global scope in order to be used by Web Slider
-addAppObjectToGlobalScope(SAMPLE_OBJECT, ObjectDefinition);
+addAppObjectToGlobalScope(OBJECT_UID, ObjectDefinition);

@@ -12,18 +12,18 @@ import {
 import { logger } from "webslider-sdk/lib/utils/logger/logger";
 import { convertRGBColor2RGBAString } from "webslider-sdk/lib/utils/utils";
 import { IInputMetadataValues } from "webslider-sdk/lib/inputs/i-inputs";
-import { SampleObjectValues, SAMPLE_OBJECT } from "./sample-object-types";
+import { ObjectValues, OBJECT_UID } from "./object-types";
 
 /**
  * This function return html used in Web Slider Player
  */
 export function getHtml(props: GetHtmlFuncPropsType): GetHtmlFuncReturnType {
-  logger.object.debug(`${SAMPLE_OBJECT}:getHtml()`);
+  logger.object.debug("io.webslider.sample-object::getHtml()");
 
   const { object, calculatedObjectSize } = props;
 
   // Note: object.definition.values contain values that are set from Properties Panel
-  const values = object.definition.values as SampleObjectValues;
+  const values = object.definition.values as ObjectValues;
   const metaValues = object.definition.valuesMetadata as {
     [key: string]: IInputMetadataValues;
   };
@@ -64,7 +64,7 @@ export function getHtml(props: GetHtmlFuncPropsType): GetHtmlFuncReturnType {
 export async function sizeUpdate(
   props: UpdateObjectSizeFuncPropsType
 ): Promise<void> /*UpdateObjectSizeFuncReturnType*/ {
-  logger.object.debug(`${SAMPLE_OBJECT}:sizeUpdate()`);
+  logger.object.debug("io.webslider.sample-object::sizeUpdate()");
 
   const { id, calculatedObjectSize, className, values } = props;
 
@@ -97,7 +97,7 @@ export async function sizeUpdate(
 export async function preload(
   props: PreloadFuncPropsType
 ): Promise<string> /*PreloadFuncReturnType*/ {
-  logger.object.debug(`${SAMPLE_OBJECT}:preload()`);
+  logger.object.debug("io.webslider.sample-object::preload()");
 
   const { id } = props;
 
@@ -110,7 +110,7 @@ export async function preload(
 export function objectStart(
   props: ExecutionCodeFuncPropsType
 ): ExecutionCodeFuncReturnType {
-  logger.object.debug(`${SAMPLE_OBJECT}:objectStart()`);
+  logger.object.debug("io.webslider.sample-object::objectStart()");
 }
 
 /**
@@ -119,7 +119,7 @@ export function objectStart(
 export function objectStop(
   props: ExecutionCodeFuncPropsType
 ): ExecutionCodeFuncReturnType {
-  logger.object.debug(`${SAMPLE_OBJECT}:objectStop()`);
+  logger.object.debug("io.webslider.sample-object::objectStop()");
 }
 
 /**
@@ -129,7 +129,7 @@ export function objectStop(
 export function postProcess(
   props: PostProcessFuncPropsType
 ): PostProcessFuncReturnType {
-  logger.object.debug(`${SAMPLE_OBJECT}:postProcess()`);
+  logger.object.debug("io.webslider.sample-object::postProcess()");
 
   const { object } = props;
   return props.object;

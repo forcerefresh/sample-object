@@ -1,7 +1,7 @@
 // This file contains configuration for production build
 const path = require("path");
 
-const MODULE_FILE_NAME_PLAYER = "sample-object-player.js";
+const MODULE_FILE_NAME_PLAYER = "io.webslider.sample-object-player.js";
 
 // Configuration for Object build used in Web Slider Player
 module.exports = {

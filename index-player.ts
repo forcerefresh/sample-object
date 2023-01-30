@@ -4,7 +4,7 @@
 
 import { addPlayerObjectToGlobalScope } from "webslider-sdk/lib/objects/object-utils";
 import { IObjectDefinition } from "webslider-sdk/lib/objects/objects-register";
-import { SAMPLE_OBJECT } from "./src/sample-object-types";
+import { OBJECT_UID } from "./src/object-types";
 import {
   objectStart,
   objectStop,
@@ -12,10 +12,10 @@ import {
   preload,
   sizeUpdate,
   PRELOAD_ORDER,
-} from "./src/sample-object-player";
+} from "./src/object-player";
 
 export const ObjectDefinition: IObjectDefinition = {
-  type: SAMPLE_OBJECT,
+  type: OBJECT_UID,
   getHtml,
   sizeUpdate,
   preload,
@@ -25,4 +25,4 @@ export const ObjectDefinition: IObjectDefinition = {
 };
 
 // Object adds itself to global scope in order to be used by Web Slider
-addPlayerObjectToGlobalScope(SAMPLE_OBJECT, ObjectDefinition);
+addPlayerObjectToGlobalScope(OBJECT_UID, ObjectDefinition);
