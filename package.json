@@ -1,15 +1,15 @@
 {
-  "name": "sample-object",
+  "name": "io.webslider.sample-object",
   "version": "1.0.1",
   "license": "EULA",
   "scripts": {
     "start": "webpack serve --open",
     "build": "gulp",
-    "analyze-player": "source-map-explorer 'dist/sample-object-player.js'",
-    "analyze-app": "source-map-explorer 'dist/sample-object-app.js'"
+    "analyze-player": "source-map-explorer 'dist/io.webslider.sample-object-player.js'",
+    "analyze-app": "source-map-explorer 'dist/io.webslider.sample-object-app.js'"
   },
   "dependencies": {
-    "webslider-sdk": "^1.1.11"
+    "webslider-sdk": "^1.1.48"
   },
   "devDependencies": {
     "create-hash-file-webpack": "^1.0.4",

@@ -1,6 +1,6 @@
 {
   "componentType": "object",
-  "type": "sample-object",
+  "type": "io.webslider.sample-object",
   "name": "Sample object",
   "version": "1.0.0",
   "description": "Boilerplate for creating Object for Web Slider",
@@ -21,8 +21,8 @@
     "url": ""
   },
   "packageFiles": {
-    "appObjectFilename": "sample-object-app.js",
-    "playerObjectFilename": "sample-object-player.js",
+    "appObjectFilename": "io.webslider.sample-object-app.js",
+    "playerObjectFilename": "io.webslider.sample-object-player.js",
     "icon": "sample-object-icon.svg"
   },
   "packageUrl": "",

@@ -18,14 +18,14 @@ import {
   ObjectMetaType,
 } from "webslider-sdk/lib/objects/objects-register";
 import { logger } from "webslider-sdk/lib/utils/logger/logger";
-import { SampleObjectValues, SAMPLE_OBJECT } from "./sample-object-types";
-import svgIcon from "../static/sample-object-icon.svg";
+import { ObjectValues, OBJECT_UID } from "./object-types";
+import svgIcon from "../static/icon.svg";
 
 /**
  * This is a type definition for Object properties form definition
  * Generic string values have to match with Object values interface properties names
  */
-export type SampleObjectTuple = [
+export type ObjectTuple = [
   ITextInput<"sampleTextInput">,
   ISliderInput<"sampleSlider">,
   ICheckboxInput<"sampleCheckbox">,
@@ -38,12 +38,12 @@ export type SampleObjectTuple = [
  */
 export function createObject(
   props: CreateObjectFuncPropsType
-): CreateObjectFuncReturnType<SampleObjectTuple> {
-  logger.object.debug(`${SAMPLE_OBJECT}::createObject()`);
+): CreateObjectFuncReturnType<ObjectTuple> {
+  logger.object.debug("io.webslider.sample-object::createObject()");
 
-  const object = createCommonObject(SAMPLE_OBJECT);
+  const object = createCommonObject(OBJECT_UID);
 
-  const propertiesFormDefinition: SampleObjectTuple = [
+  const propertiesFormDefinition: ObjectTuple = [
     {
       displayName: "Text input",
       propertyName: "sampleTextInput",
@@ -81,7 +81,7 @@ export function createObject(
     },
   ];
 
-  const values: SampleObjectValues = {
+  const values: ObjectValues = {
     sampleTextInput: "",
     sampleSlider: 50,
     sampleCheckbox: false,
@@ -92,7 +92,7 @@ export function createObject(
     ...object,
     definition: {
       id: guid(),
-      type: SAMPLE_OBJECT,
+      type: OBJECT_UID,
       properties: propertiesFormDefinition, // TODO: check if need to be renamed
       values,
       valuesMetadata: {
@@ -108,12 +108,12 @@ export function createObject(
 export function getHtmlForApp(
   props: GetHtmlFuncPropsType
 ): GetHtmlFuncReturnType {
-  logger.object.debug(`${SAMPLE_OBJECT}::getHtmlForApp()`);
+  logger.object.debug("io.webslider.sample-object::getHtmlForApp");
 
   const { object, calculatedObjectSize } = props;
 
   // Note: object.definition.values contain values that are set from Properties Panel
-  const values = object.definition.values as SampleObjectValues;
+  const values = object.definition.values as ObjectValues;
 
   if (!values.sampleTextInput) {
     return getObjectPlaceholder(
@@ -127,7 +127,7 @@ export function getHtmlForApp(
 export const getAssetsUrls = (
   props: GetAssetsUrlFuncPropsType
 ): GetAssetsUrlFuncReturnType => {
-  logger.object.debug(`${SAMPLE_OBJECT}::getAssetsUrls()`);
+  logger.object.debug("io.webslider.sample-object::getAssetsUrls");
 
   return [];
 };

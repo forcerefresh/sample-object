@@ -2,7 +2,7 @@
 const path = require("path");
 const WebpackStrip = require("strip-loader");
 
-const MODULE_FILE_NAME_APP = "sample-object-app.js";
+const MODULE_FILE_NAME_APP = "io.webslider.sample-object-app.js";
 
 // Configuration for object build used in Web Slider App
 module.exports = {
