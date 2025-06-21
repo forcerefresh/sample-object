@@ -9,6 +9,7 @@ import {
   getAssetsUrls,
   getHtmlForApp,
   objectMeta,
+  getObjectForm,
 } from "./src/object-app";
 import { IObjectAppDefinition } from "webslider-sdk/lib/objects/objects-register";
 import { addAppObjectToGlobalScope } from "webslider-sdk/lib/objects/object-utils";
@@ -27,6 +28,7 @@ export const ObjectDefinition: IObjectAppDefinition = {
   group: "media",
   meta: objectMeta,
   createObject,
+  getObjectForm,
   getHtml: getHtmlForApp,
   postProcess,
   getAssetsUrls,
