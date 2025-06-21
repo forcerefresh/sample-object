@@ -7,9 +7,7 @@ import {
 } from "webslider-sdk/lib/inputs/i-inputs";
 import { createCommonObject } from "webslider-sdk/lib/objects/create-common-object";
 import { getObjectPlaceholder } from "webslider-sdk/lib/objects/object-helpers";
-import { guid } from "webslider-sdk/lib/utils/guid";
 import {
-  CreateObjectFuncPropsType,
   CreateObjectFuncReturnType,
   GetAssetsUrlFuncPropsType,
   GetAssetsUrlFuncReturnType,
@@ -20,6 +18,7 @@ import {
 import { logger } from "webslider-sdk/lib/utils/logger/logger";
 import { ObjectValues, OBJECT_UID } from "./object-types";
 import svgIcon from "../static/icon.svg";
+import { convertRGBColor2RGBAString } from "webslider-sdk/lib/utils/utils";
 
 /**
  * This is a type definition for Object properties form definition
@@ -36,13 +35,7 @@ export type ObjectTuple = [
  * This functions generate and return new Object instance
  * It is called from app every time when you add Object from Objects panel to stage
  */
-export function createObject(
-  props: CreateObjectFuncPropsType
-): CreateObjectFuncReturnType<ObjectTuple> {
-  logger.object.debug("io.webslider.sample-object::createObject()");
-
-  const object = createCommonObject(OBJECT_UID);
-
+export function getObjectForm(): ObjectTuple {
   const propertiesFormDefinition: ObjectTuple = [
     {
       displayName: "Text input",
@@ -81,6 +74,16 @@ export function createObject(
     },
   ];
 
+  return propertiesFormDefinition;
+}
+
+export function createObject(
+  _initialValue?: Record<string, any>
+): CreateObjectFuncReturnType<ObjectValues> {
+  logger.object.debug("io.webslider.sample-object::createObject()");
+
+  const object = createCommonObject(OBJECT_UID);
+
   const values: ObjectValues = {
     sampleTextInput: "",
     sampleSlider: 50,
@@ -88,18 +91,9 @@ export function createObject(
     sampleColor: { r: 255, g: 255, b: 255, a: 1 },
   };
 
-  return {
-    ...object,
-    definition: {
-      id: guid(),
-      type: OBJECT_UID,
-      properties: propertiesFormDefinition, // TODO: check if need to be renamed
-      values,
-      valuesMetadata: {
-        sampleColor: { exportForWizard: false, disabled: true },
-      },
-    },
-  };
+  object.properties = values;
+
+  return object;
 }
 
 /**
@@ -112,16 +106,33 @@ export function getHtmlForApp(
 
   const { object, calculatedObjectSize } = props;
 
-  // Note: object.definition.values contain values that are set from Properties Panel
-  const values = object.definition.values as ObjectValues;
+  const values = object.properties as ObjectValues;
 
-  if (!values.sampleTextInput) {
-    return getObjectPlaceholder(
-      `SAMPLE OBJECT<br/>(Please add some text in Sample text field)`
-    );
-  } else {
-    return getObjectPlaceholder(`SAMPLE OBJECT<br/>${values.sampleTextInput}`);
-  }
+  const style = `background-color: ${convertRGBColor2RGBAString(
+    values.sampleColor
+  )};`;
+
+  const details = `<div class="object-content" style="${style}">
+    SampleText value: ${values.sampleTextInput}<br/>
+    SampleSlider value ${values.sampleSlider}<br/>
+    SampleCheckbox value: ${
+      values.sampleCheckbox ? "CHECKED" : "NOT CHECKED"
+    }<br/>
+    Left: <span class="object-left-${object.id}">${
+    calculatedObjectSize.left
+  }</span><br/>
+    Top: <span class="object-top-${object.id}">${
+    calculatedObjectSize.top
+  }</span><br/>
+    Width: <span class="object-width-${object.id}">${
+    calculatedObjectSize.width
+  }</span><br/>
+    Height: <span class="object-height-${object.id}">${
+    calculatedObjectSize.height
+  }</span><br/>
+  </div>`;
+
+  return getObjectPlaceholder(`SAMPLE OBJECT<br/>${details}`);
 }
 
 export const getAssetsUrls = (
@@ -139,4 +150,6 @@ export const objectMeta: ObjectMetaType = {
   name: "SAMPLE OBJECT",
   description: "Boilerplate for creating Object for Web Slider",
   icon: svgIcon,
+  isEditable: true,
+  supportWidthResize: true,
 };

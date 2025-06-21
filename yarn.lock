@@ -144,6 +144,18 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.11.tgz#d421b6c527a3037f7c84433fd2c4229e016863d3"
   integrity sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==
 
+"@types/lodash-es@^4.17.12":
+  version "4.17.12"
+  resolved "https://registry.yarnpkg.com/@types/lodash-es/-/lodash-es-4.17.12.tgz#65f6d1e5f80539aa7cfbfc962de5def0cf4f341b"
+  integrity sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.17.18"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.18.tgz#4710e7db5b3857103764bf7b7b666414e6141baf"
+  integrity sha512-KJ65INaxqxmU6EoCiJmRPZC9H9RVWCRd349tXM2M3O5NA7cY6YL7c0bHAHQ93NOfTObEQ004kd2QVHs/r0+m4g==
+
 "@types/mime@*":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-3.0.1.tgz#5f8f2bca0a5863cb69bc0b0acd88c96cb1d4ae10"
@@ -2669,6 +2681,11 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
 lodash.clone@^4.3.2:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clone/-/lodash.clone-4.5.0.tgz#195870450f5a13192478df4bc3d23d2dea1907b6"
@@ -4614,10 +4631,14 @@ webpack@^5.73.0:
     watchpack "^2.4.0"
     webpack-sources "^3.2.3"
 
-webslider-sdk@^1.1.48:
-  version "1.1.48"
-  resolved "https://registry.yarnpkg.com/webslider-sdk/-/webslider-sdk-1.1.48.tgz#b9062913546d48435c4da69a6e6b711388c0afd5"
-  integrity sha512-BHrR+ESi8AFLPo6Amo9FbVVdEPUiwT0SwoRRi+35AbC2EpkTyfqAtzluqcOov0Y+3yRaobssSUQUm9WSZO3EIw==
+webslider-sdk@^1.1.144, webslider-sdk@^1.1.168:
+  version "1.1.168"
+  resolved "https://registry.yarnpkg.com/webslider-sdk/-/webslider-sdk-1.1.168.tgz#1021a2e34ae205ac245655ac02e79ced943e7be8"
+  integrity sha512-lrX+Glkx3yV3TbqIRgMsHIoYD5D5lQp21j/BgVMuUyoFrKh6qAkhwQksBC3Hkuut9dvpFzJRz+fXzfdcOTMqwQ==
+  dependencies:
+    "@types/lodash-es" "^4.17.12"
+    lodash-es "^4.17.21"
+    webslider-sdk "^1.1.144"
 
 websocket-driver@>=0.5.1, websocket-driver@^0.7.4:
   version "0.7.4"

@@ -11,8 +11,7 @@ import {
 } from "webslider-sdk/lib/objects/objects-register";
 import { logger } from "webslider-sdk/lib/utils/logger/logger";
 import { convertRGBColor2RGBAString } from "webslider-sdk/lib/utils/utils";
-import { IInputMetadataValues } from "webslider-sdk/lib/inputs/i-inputs";
-import { ObjectValues, OBJECT_UID } from "./object-types";
+import { ObjectValues } from "./object-types";
 
 /**
  * This function return html used in Web Slider Player
@@ -22,38 +21,32 @@ export function getHtml(props: GetHtmlFuncPropsType): GetHtmlFuncReturnType {
 
   const { object, calculatedObjectSize } = props;
 
-  // Note: object.definition.values contain values that are set from Properties Panel
-  const values = object.definition.values as ObjectValues;
-  const metaValues = object.definition.valuesMetadata as {
-    [key: string]: IInputMetadataValues;
-  };
+  // Note: object.properties contain values that are set from Properties Panel
+  const values = object.properties as ObjectValues;
 
-  let style = "";
-  if (!metaValues.sampleColor.disabled) {
-    style = `background-color: ${convertRGBColor2RGBAString(
-      values.sampleColor
-    )} ;`;
-  }
+  const style = `background-color: ${convertRGBColor2RGBAString(
+    values.sampleColor
+  )};`;
 
   return `<div class="object-content" style="${style}">
-        SampleText value: ${values.sampleTextInput}<br/>
-        SampleSlider value ${values.sampleSlider}<br/>
-        SampleCheckbox value: ${
-          values.sampleCheckbox ? "CHECKED" : "NOT CHECKED"
-        }<br/>
-        Left: <span class="object-left-${object.id}">${
+    SampleText value: ${values.sampleTextInput}<br/>
+    SampleSlider value ${values.sampleSlider}<br/>
+    SampleCheckbox value: ${
+      values.sampleCheckbox ? "CHECKED" : "NOT CHECKED"
+    }<br/>
+    Left: <span class="object-left-${object.id}">${
     calculatedObjectSize.left
   }</span><br/>
-        Top: <span class="object-top-${object.id}">${
+    Top: <span class="object-top-${object.id}">${
     calculatedObjectSize.top
   }</span><br/>
-        Width: <span class="object-width-${object.id}">${
+    Width: <span class="object-width-${object.id}">${
     calculatedObjectSize.width
   }</span><br/>
-        Height: <span class="object-height-${object.id}">${
+    Height: <span class="object-height-${object.id}">${
     calculatedObjectSize.height
   }</span><br/>
-      </div>`;
+  </div>`;
 }
 
 /**
@@ -63,10 +56,10 @@ export function getHtml(props: GetHtmlFuncPropsType): GetHtmlFuncReturnType {
  */
 export async function sizeUpdate(
   props: UpdateObjectSizeFuncPropsType
-): Promise<void> /*UpdateObjectSizeFuncReturnType*/ {
+): Promise<void> {
   logger.object.debug("io.webslider.sample-object::sizeUpdate()");
 
-  const { id, calculatedObjectSize, className, values } = props;
+  const { id, calculatedObjectSize, className } = props;
 
   const els = document.getElementsByClassName(className); // insted of className we can use: `object-${id}`
   const objectDiv = els[0] as HTMLDivElement;
