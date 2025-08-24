@@ -18,6 +18,8 @@ import {
   showLoggerUsage,
 } from "webslider-sdk/lib/utils/logger/logger";
 
+import { version } from "./package.json";
+
 // This output a list of available log levels and how to use them for logging in Object
 // Development: I the development mode all logs levels messages are visible
 // Production: In the production build there will be only visible error and fatal log level messages
@@ -25,6 +27,7 @@ showLoggerUsage(LoggerDomain.Object);
 
 export const ObjectDefinition: IObjectAppDefinition = {
   type: OBJECT_UID,
+  version: version,
   group: "media",
   meta: objectMeta,
   createObject,
@@ -35,4 +38,4 @@ export const ObjectDefinition: IObjectAppDefinition = {
 };
 
 // Object adds itself to global scope in order to be used by Web Slider
-addAppObjectToGlobalScope(OBJECT_UID, ObjectDefinition);
+addAppObjectToGlobalScope(OBJECT_UID, version, ObjectDefinition);

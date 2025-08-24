@@ -1,5 +1,5 @@
 {
-  "componentType": "object",
+  "extensionType": "object",
   "type": "io.webslider.sample-object",
   "name": "Sample object",
   "version": "1.0.0",

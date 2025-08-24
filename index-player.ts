@@ -14,8 +14,11 @@ import {
   PRELOAD_ORDER,
 } from "./src/object-player";
 
+import { version } from "./package.json";
+
 export const ObjectDefinition: IObjectDefinition = {
   type: OBJECT_UID,
+  version: version,
   getHtml,
   sizeUpdate,
   preload,
@@ -25,4 +28,4 @@ export const ObjectDefinition: IObjectDefinition = {
 };
 
 // Object adds itself to global scope in order to be used by Web Slider
-addPlayerObjectToGlobalScope(OBJECT_UID, ObjectDefinition);
+addPlayerObjectToGlobalScope(OBJECT_UID, version, ObjectDefinition);

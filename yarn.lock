@@ -181,6 +181,11 @@
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
   integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
 
+"@types/semver@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.7.0.tgz#64c441bdae033b378b6eef7d0c3d77c329b9378e"
+  integrity sha512-k107IF4+Xr7UHjwDc7Cfd6PRQfbdkiRabXGRjo07b4WyPahFBZCZ1sE+BNxYIJPPg73UkfOsVOLwqVc/6ETrIA==
+
 "@types/serve-index@^1.9.1":
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/@types/serve-index/-/serve-index-1.9.1.tgz#1b5e85370a192c01ec6cec4735cf2917337a6278"
@@ -3737,6 +3742,11 @@ semver@^7.3.4:
   dependencies:
     lru-cache "^6.0.0"
 
+semver@^7.7.2:
+  version "7.7.2"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.2.tgz#67d99fdcd35cec21e6f8b87a7fd515a33f982b58"
+  integrity sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==
+
 send@0.18.0:
   version "0.18.0"
   resolved "https://registry.yarnpkg.com/send/-/send-0.18.0.tgz#670167cc654b05f5aa4a767f9113bb371bc706be"
@@ -4631,13 +4641,24 @@ webpack@^5.73.0:
     watchpack "^2.4.0"
     webpack-sources "^3.2.3"
 
-webslider-sdk@^1.1.144, webslider-sdk@^1.1.168:
+webslider-sdk@^1.1.144:
   version "1.1.168"
   resolved "https://registry.yarnpkg.com/webslider-sdk/-/webslider-sdk-1.1.168.tgz#1021a2e34ae205ac245655ac02e79ced943e7be8"
   integrity sha512-lrX+Glkx3yV3TbqIRgMsHIoYD5D5lQp21j/BgVMuUyoFrKh6qAkhwQksBC3Hkuut9dvpFzJRz+fXzfdcOTMqwQ==
   dependencies:
     "@types/lodash-es" "^4.17.12"
     lodash-es "^4.17.21"
+    webslider-sdk "^1.1.144"
+
+webslider-sdk@^1.1.177:
+  version "1.1.177"
+  resolved "https://registry.yarnpkg.com/webslider-sdk/-/webslider-sdk-1.1.177.tgz#ae9832e1187c287ca99669c0cadbe7807bf01c27"
+  integrity sha512-Pk31LX/qqUegyLAxEftSrooetaLJ9NOjWDAHzdXiaikyPJO9dxfAF/p4Jl1jPES64orxdGZsYE+sUzKvUAq55w==
+  dependencies:
+    "@types/lodash-es" "^4.17.12"
+    "@types/semver" "^7.7.0"
+    lodash-es "^4.17.21"
+    semver "^7.7.2"
     webslider-sdk "^1.1.144"
 
 websocket-driver@>=0.5.1, websocket-driver@^0.7.4:
